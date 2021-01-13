@@ -14,21 +14,26 @@
   },
   "devDependencies": {
     "@types/node": "13.13.39",
+    "@types/query-string": "5.1.0",
     "@types/react": "16.14.2",
     "@types/react-dom": "16.9.10",
     "@types/webpack": "4.41.26",
     "@types/webpack-dev-server": "3.11.1",
     "@typescript-eslint/eslint-plugin": "4.13.0",
     "@typescript-eslint/parser": "4.13.0",
+    "css-loader": "^5.0.1",
     "eslint": "7.17.0",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
+    "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "5.2.1",
     "html-webpack-plugin": "4.5.1",
     "prettier": "2.2.1",
+    "source-map-explorer": "^2.0.0",
+    "style-loader": "^2.0.0",
     "ts-loader": "8.0.14",
     "ts-node": "9.1.1",
     "tsconfig-paths-webpack-plugin": "3.3.0",
@@ -38,7 +43,8 @@
     "webpack-dev-server": "3.11.2"
   },
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+
   }
 }

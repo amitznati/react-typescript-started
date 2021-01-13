@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import {TsconfigPathsPlugin} from "tsconfig-paths-webpack-plugin";
 
-const webpackConfig = (env): Configuration => ({
+const webpackConfig = (env): { output: { path: string; filename: string }; entry: string; resolve: { extensions: string[]; plugins: TsconfigPathsPlugin[] }; plugins: (HtmlWebpackPlugin | webpack.DefinePlugin | any)[]; module: { rules: ({ test: RegExp; loader: string; options: { transpileOnly: boolean }; exclude: RegExp } | { test: RegExp; use: string[] } | { test: RegExp; use: { loader: string }[] })[] } } => ({
     entry: "./src/index.tsx",
     ...(env.production || !env.development ? {} : {devtool: "eval-source-map"}),
     resolve: {
@@ -24,7 +24,19 @@ const webpackConfig = (env): Configuration => ({
                     transpileOnly: true
                 },
                 exclude: /dist/
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
         ]
     },
     plugins: [
